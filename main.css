@@ -1,0 +1,45 @@
+
+body {
+    background-color: #000000;
+}
+
+.background{
+    filter: blur(5px);
+}
+
+.ball {
+    position: absolute;
+    top: 150px;
+    left: 110px;
+    
+}
+
+div {
+    width: 1600px;
+}
+    
+.elmo{
+    position: absolute;
+    top: 700px;
+    left: 0px;    
+}
+
+.elmo2{
+    position: absolute;
+    top: 845px;
+    left: 0px;    
+}
+
+.roll{
+    position: absolute;
+    top: 600px;
+    right: 630px;
+    background-color: dimgrey;
+    color: white;
+    font-size: 50px;
+}
+
+.wat {
+    position: relative;
+    left: 27%;
+}
