@@ -1,45 +1,130 @@
 
-body {
+@font-face{
+    src: url(./font/GloriaHallelujah-Regular.ttf);
+}
+
+body{
     background-color: #000000;
 }
 
 .background{
-    filter: blur(5px);
+    filter: blur(20px);
 }
 
-.ball {
+.ball{
     position: absolute;
-    top: 150px;
+    top: 140px;
     left: 110px;
-    
+    width:900px;
 }
 
-div {
-    width: 1600px;
+.rBall{
+    position: absolute;
+    top: 70px;
+    left: 110px;
+    width:900px;
+}
+
+div{
+    width: 1580px;
 }
     
 .elmo{
     position: absolute;
-    top: 700px;
-    left: 0px;    
+    top: 750px;
+    left: 90px; 
+    width: 1530px;
 }
 
 .elmo2{
     position: absolute;
-    top: 845px;
-    left: 0px;    
+    top: 895px;
+    left: 10px;  
+    width: 1530px;
+}
+
+fade-in{
+    height: 1px;
+    padding: 0;
+}
+
+header{
+    font-size: 100px;
+}
+
+h1{
+    text-align: center
 }
 
 .roll{
     position: absolute;
-    top: 600px;
-    right: 630px;
-    background-color: dimgrey;
+    top: 477px;
+    right: 123px;
+    background-color: darkmagenta;
     color: white;
     font-size: 50px;
+    text-align: center;
+    
 }
 
-.wat {
+.wat{
     position: relative;
-    left: 27%;
+    left: 500px;
+    top: 10px;
+    width: 500px;
+    transform: scale(2)
+}
+
+input { 
+  display: none;
+}
+
+#target { 
+  opacity: 0;
+  background-color: rosybrown;
+  background: black;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  position: absolute;
+  height: 160%;
+  width: 100%;  
+  top: 0;
+  left: 0;
+  z-index: -1;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-transition: all 2s; /* Safari */
+  transition: all 2s;
+}
+
+#click:checked ~ label > #target {
+  opacity: 1;
+  z-index: 200;
+  cursor: pointer;  
+  pointer-events: auto;
+}
+
+#replay {
+  color: crimson;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  bottom: 20px;
+  cursor: pointer;
+}
+
+#warning {
+  color: white;
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  margin: auto;
 }

@@ -6,36 +6,65 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>magic8ball.lol</title>
     <link rel="stylesheet" href="main.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah">
+        <style>
+        body {
+          font-family: "Gloria Hallelujah", sans-serif;
+        }
+        </style>
   </head>
-     <div class="wat" href="https://cooltext.com">
-        <img src=./media/watmeme.gif></img>
-    </div>
   <body>
+      <div class="wat">
+            <img src="media/wat.gif"></img>
+      </div>      
       <div class="background">
-          <img src="media/trippy.gif"
-               width=1600px></img>
+            <img src="media/trippy.gif"
+                   width= 1600px></img>
       </div>
-      <div class="ball">
-        <img src=./media/Magic-8-Ball.png
-             width= 1300px></img>
+          <div class="ball">
+            <img src=./media/Magic-8-Ball.png
+                 width= 1300px></img>
+            <button type="button" class="roll">GAMBA</button>
+          </div>
+          <div class="elmo">
+            <img src=./media/fluffle.gif></img>
+            <img src=./media/telmo-glarb.gif></img>
+            <img src=./media/doubleye.gif></img>
+            <img src=./media/bowser.gif></img>
+            <img src=./media/chibi.gif></img>
+            <img src=./media/rainbowcat.gif></img>
+          </div>
+          <div class="elmo2">
+            <img src=./media/gnome.gif></img>
+            <img src=./media/telmo-coca.gif></img>
+            <img src=./media/doubleye.gif></img>
+            <img src=./media/chibi.gif></img>
+            <a href=./rigged.html><img src=./media/rigged.gif href=./rigged.html></img></a>
+            <img src=./media/telmo-coca.gif></img>
+          </div>
+          <div>
+            <input type="checkbox" id="click" checked />
+            <label for="click">
+            <div id=target>
+                <h1 id=warning>99% still don't get it - when they win, they start betting less.<br/>Bet More</h1>
+            </div> 
+
+            <audio id="audioPlayer" src="media/thundertruth.mp3"></audio>
+
+              <script>
+                const audioToggle = document.getElementById('click');
+                const audioPlayer = document.getElementById('audioPlayer');
+
+                audioToggle.addEventListener('change', () => {
+                  if (audioToggle.checked) {
+                    audioPlayer.pause();
+                  } else {
+                    audioPlayer.play();
+                  }
+                });
+              </script>
+            </label>
       </div>
-      <button type="button" class="roll">GAMBA</button>
-      <div class="elmo">
-        <img src=./media/telmo-coca.gif></img>
-        <img src=./media/telmo-coca.gif></img>
-        <img src=./media/telmo-coca.gif></img>
-        <img src=./media/telmo-coca.gif></img>
-        <img src=./media/telmo-coca.gif></img>
-        <img src=./media/telmo-coca.gif></img>
-      </div>
-      <div class="elmo2">
-        <img src=./media/telmo-coca.gif></img>
-        <img src=./media/telmo-coca.gif></img>
-        <img src=./media/telmo-coca.gif></img>
-        <img src=./media/telmo-coca.gif></img>
-        <img src=./media/telmo-coca.gif></img>
-        <img src=./media/telmo-coca.gif></img>
       </div>
   </body>
-  
 </html>
