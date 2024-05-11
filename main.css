@@ -1,17 +1,32 @@
 
 @font-face{
-    src: url(./font/GloriaHallelujah-Regular.ttf);
+    font-family: 'Gloria Hallelujah', sans-serif;
+    src: url(https://fonts.googleapis.com/css?family=Gloria+Hallelujah);
 }
 
 body{
     background-color: #000000;
+    font-family: 'Gloria Hallelujah';
 }
 
 .background{
     filter: blur(20px);
 }
 
-.ball{
+#ball{
+    position: absolute;
+    top: 140px;
+    left: 110px;
+    width:900px;
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+#ball.hidden{
+    display: none;
+}
+
+.ball2{
     position: absolute;
     top: 140px;
     left: 110px;
@@ -33,14 +48,22 @@ div{
     position: absolute;
     top: 750px;
     left: 90px; 
-    width: 1530px;
+    width: 1580px;
 }
 
 .elmo2{
     position: absolute;
-    top: 895px;
+    top: 902px;
     left: 10px;  
-    width: 1530px;
+    width: 1580px;
+}
+
+#emoji{
+    position: absolute;
+    top: 320px;
+    left: 680px;
+    z-index: 3;
+    text-align: center;
 }
 
 fade-in{
@@ -56,15 +79,32 @@ h1{
     text-align: center
 }
 
-.roll{
+#roll{
     position: absolute;
     top: 477px;
-    right: 123px;
+    right: 153px;
+    background-color: darkmagenta;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Gloria Hallelujah';
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+#roll.hidden{
+    display: none;
+}
+
+.roll2{
+    position: absolute;
+    top: 477px;
+    right: 113px;
     background-color: darkmagenta;
     color: white;
     font-size: 50px;
     text-align: center;
-    
+    font-family: 'Gloria Hallelujah';
 }
 
 .wat{

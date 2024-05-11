@@ -6,14 +6,136 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>magic8ball.lol</title>
     <link rel="stylesheet" href="main.css">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah">
-        <style>
-        body {
-          font-family: "Gloria Hallelujah", sans-serif;
-        }
-        </style>
   </head>
   <body>
+      <script>
+            function hideRoll(){   //fades out 8 ball into magic 8 ball
+                const ball = document.getElementById("ball")
+                const roll = document.getElementById("roll")
+                ball.style.opacity = "0";
+                roll.style.opacity = "0";
+                setTimeout(() => {
+                    ball.parentNode.removeChild(ball);
+                }, "600")
+                setTimeout(() => {
+                    roll.parentNode.removeChild(roll);
+                }, "600")
+                rollIt();
+            };
+            function rollIt(){
+                var memes = [
+                    "bear",
+                    "bearhear",
+                    "blackflag",
+                    "blissful",
+                    "blowfish",
+                    "cash",
+                    "cat",
+                    "chick",
+                    "china",
+                    "clown",
+                    "corn",
+                    "crystalball",
+                    "diamond",
+                    "dice",
+                    "dog",
+                    "eightball",
+                    "envelop",
+                    "fahrenheit",
+                    "gun",
+                    "meat",
+                    "moon",
+                    "orwell",
+                    "paper",
+                    "peach",
+                    "pi",
+                    "placeholder",
+                    "poo",
+                    "pretzel",
+                    "rock",
+                    "rocket",
+                    "usa",
+                    "scisors",
+                    "shrimp",
+                    "skull",
+                    "sushi",
+                    "taco",
+                    "taiwan",
+                    "test",
+                    "watermelon"
+                ];  //meme names
+                
+                var probs = []       //probability array for basket values
+                
+                for (let i = 0; i < memes.length; i++) {
+                                                   // need the global probability of each meme to create probability array to populate values in basket
+                    const memeName = 'p' + memes[i];
+                    window['memeName'] = probs[i];
+                };
+                
+                var basket = [
+                  { item: "ʕ·͡ᴥ·ʔ",     probability: pbear,          },
+                  { item: "ʕっ•ᴥ•ʔっ❤️", probability: pbearHeart,     },
+                  { item: "🏴",        probability: pblackflag,     },
+                  { item: "(｡◕‿‿◕｡)",  probability: pblissful,      },
+                  { item: "🐡",        probability: pblowfish,      },
+                  { item: "💸",        probability: pcash,          },
+                  { item: "🐱",        probability: pcat,           },
+                  { item: "🐤",        probability: pchick,         },
+                  { item: "🇨🇳",        probability: pchina,         },
+                  { item: "🤡",         probability: pclown,         },
+                  { item: "🌽",         probability: pcorn,          },
+                  { item: "🔮",         probability: pcrystalball,  },
+                  { item: "💎",         probability: pdiamond,       },
+                  { item: "🎲",         probability: pdice,          },
+                  { item: "🐶",         probability: pdog,           },
+                  { item: "🎱",         probability: peightball,     },
+                  { item: "✉️",         probability: penvelop,       },
+                  { item: "🔥",         probability: pfarenheit,     },
+                  { item: "▄︻デ══‐一♡", probability: pgun,           },
+                  { item: "🥩",         probability: pmeat,          },
+                  { item: "🌕",         probability: pmoon,          },
+                  { item: "🐷",         probability: porwell,        },
+                  { item: "📄",         probability: ppaper,         },
+                  { item: "🍑",         probability: ppeach,         },
+                  { item: "🥧",         probability: ppi,            },
+                  { item: "placeholder", probability: pplaceholder,  },
+                  { item: "💩",         probability: ppoo,           },
+                  { item: "🥨",         probability: ppretzel,       },
+                  { item: "🪨",         probability: prock,          },
+                  { item: "🚀",         probability: procket,        },
+                  { item: "🇺🇸",         probability: pusa,           },
+                  { item: "✂️",         probability: pscisors,       },
+                  { item: "🦐",         probability: pshrimp,        },
+                  { item: "💀",         probability: pskull,         },
+                  { item: "🍣",         probability: psushi,         },
+                  { item: "🌮",         probability: ptaco,          },
+                  { item: "🇹🇼",         probability: ptaiwan,        },
+                  { item: "test",       probability: ptest,          },
+                  { item: "🍉",         probability: pwatermelon     }
+                ];
+
+            function chooseItemWithProbability(basket) {
+                  // Calculate the total weight (sum of probabilities)
+                  const totalWeight = basket.reduce((sum, item) => sum + item.probability, 0);
+
+                  // Generate a random number between 0 and the total weight
+                  const randomWeight = Math.random() * totalWeight;
+
+                  let cumulativeWeight = 0;
+                  for (const item of basket) {
+                    cumulativeWeight += item.probability;
+                    if (randomWeight <= cumulativeWeight) {
+                      return item;
+                    }
+                  }
+                }
+            const chosenItem = chooseItemWithProbability(basket);
+            const emoji = Object.values(chosenItem)[0];
+            const heading = document.getElementById('emoji');
+            heading.textContent = memeName[0];
+        };
+        </script>
       <div class="wat">
             <img src="media/wat.gif"></img>
       </div>      
@@ -21,37 +143,47 @@
             <img src="media/trippy.gif"
                    width= 1600px></img>
       </div>
-          <div class="ball">
-            <img src=./media/Magic-8-Ball.png
-                 width= 1300px></img>
-            <button type="button" class="roll">GAMBA</button>
-          </div>
-          <div class="elmo">
-            <img src=./media/fluffle.gif></img>
-            <img src=./media/telmo-glarb.gif></img>
-            <img src=./media/doubleye.gif></img>
-            <img src=./media/bowser.gif></img>
-            <img src=./media/chibi.gif></img>
-            <img src=./media/rainbowcat.gif></img>
-          </div>
-          <div class="elmo2">
-            <img src=./media/gnome.gif></img>
-            <img src=./media/telmo-coca.gif></img>
-            <img src=./media/doubleye.gif></img>
-            <img src=./media/chibi.gif></img>
-            <a href=./rigged.html><img src=./media/rigged.gif href=./rigged.html></img></a>
-            <img src=./media/telmo-coca.gif></img>
-          </div>
-          <div>
-            <input type="checkbox" id="click" checked />
-            <label for="click">
-            <div id=target>
-                <h1 id=warning>99% still don't get it - when they win, they start betting less.<br/>Bet More</h1>
-            </div> 
 
-            <audio id="audioPlayer" src="media/thundertruth.mp3"></audio>
+      <h2 id="emoji"></h2>
 
-              <script>
+      <div class="ball2">
+          <img src=./media/Magic-8-Ball-no8.png
+             width= 1300px></img>
+        <button type="button" class="roll2" onclick="rollIt()">REROLL</button>
+        <script>
+            
+        </script>
+        </div>
+      <div id="ball">
+        <img src=./media/Magic-8-Ball.png
+             width= 1300px></img>
+        
+        <button type="button" id="roll" onclick="hideRoll()">GAMBA<br>BUTTON</button>
+      </div>
+      <div class="elmo">
+        <img src=./media/fluffle.gif style="border: 3px solid blueviolet"></img>
+        <img src=./media/telmo-glarb.gif style="border: 3px solid blue"></img>
+        <img src=./media/doubleye.gif style="border: 3px solid green"></img>
+        <img src=./media/bowser.gif style="border: 3px solid cyan"></img>
+        <img src=./media/chibi.gif style="border: 3px solid chartreuse"></img>
+        <img src=./media/rainbowcat.gif style="border: 3px solid indigo"></img>
+</div>
+      <div class="elmo2">
+        <img src=./media/gnome.gif style="border: 3px solid pink"></img>
+        <img src=./media/telmo-coca.gif style="border: 3px solid pink"></img>
+        <img src=./media/doubleye.gif style="border: 3px solid pink"></img>
+        <img src=./media/chibi.gif style="border: 3px solid pink"></img>
+        <a href=./rigged.html><img src=./media/rigged.gif href=./rigged.html style="border: 3px solid pink"></img></a>
+        <img src=./media/telmo-coca.gif style="border: 3px solid pink"></img>
+</div>
+      <div>
+        <input type="checkbox" id="click" checked />
+        <label for="click">
+        <div id=target>
+            <h1 id=warning>99% still don't get it - when they win, they start betting less.<br/>Bet More</h1>
+        </div> 
+        <audio id="audioPlayer" src="media/thundertruth.mp3"></audio>
+            <script>
                 const audioToggle = document.getElementById('click');
                 const audioPlayer = document.getElementById('audioPlayer');
 
@@ -62,9 +194,8 @@
                     audioPlayer.play();
                   }
                 });
-              </script>
-            </label>
-      </div>
-      </div>
+            </script>
+        </label>
+</div>
   </body>
 </html>
